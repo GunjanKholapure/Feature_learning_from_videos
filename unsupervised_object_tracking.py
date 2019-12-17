@@ -4,10 +4,13 @@ import operator
 from sklearn.cluster import MeanShift
 import pickle
 
+
 def rreplace(s, old, new, occurrence):
     li = s.rsplit(old, occurrence)
     return new.join(li)
 
+
+# iou code taken from https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
 def iou(boxA, boxB):
     # determine the (x, y)-coordinates of the intersection rectangle
     xA = max(boxA[0], boxB[0])
